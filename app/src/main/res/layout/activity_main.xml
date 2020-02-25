@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/colorBackground">
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="411dp"
-        android:layout_height="243dp"
+        android:layout_width="match_parent"
+        android:layout_height="900px"
+        android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints"
@@ -17,10 +19,11 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="73dp"
+            android:layout_height="300px"
             android:orientation="horizontal">
 
             <TextView
+                android:layout_marginLeft="10dp"
                 android:id="@+id/beforeTransfer_Tv"
                 android:layout_width="69dp"
                 android:layout_height="wrap_content"
@@ -30,20 +33,29 @@
             <EditText
                 android:id="@+id/beforeTransfer_et"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="73dp"
                 android:layout_marginTop="16dp"
                 android:ems="10"
-                android:inputType="numberSigned"
-                />
+                android:inputType="numberSigned" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="70dp"
+                android:layout_height="88dp"
+                android:layout_weight="1"
+                android:text="Button" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="76dp"
+            android:layout_height="300px"
+            android:gravity="center"
             android:orientation="horizontal">
 
             <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="15dp"
                 android:id="@+id/afterCountry_tv"
                 android:layout_width="69dp"
                 android:layout_height="wrap_content"
@@ -52,25 +64,57 @@
 
             <TextView
                 android:id="@+id/afterTransfer_tv"
+                android:layout_width="235dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="0 KRW"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="300px"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_marginBottom="15dp"
+                android:layout_width="69dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="16dp"
+                android:text="KRW" />
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:gravity="center"
+                android:text="0 KRW"
+                android:textSize="18sp"
+                android:textStyle="normal|bold" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="-171dp"
+            tools:layout_editor_absoluteY="350dp">
 
             <Button
                 android:id="@+id/transfer_btn"
-                android:onClick="clickOnTransferMoney"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="344dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="clickOnTransferMoney"
                 android:text="Click" />
+
         </LinearLayout>
 
     </LinearLayout>
