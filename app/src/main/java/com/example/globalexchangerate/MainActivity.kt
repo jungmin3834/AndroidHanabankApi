@@ -32,8 +32,9 @@ class MainActivity : AppCompatActivity() {
             }
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 if(beforeTransfer_et.text.toString().length == 0)
-                    return
-                afterTransfer_tv.text = calculateMoneyRate(beforeTransfer_et.text.toString()) + " " + afterCountry_tv.text
+                    afterTransfer_tv.text = "0 " +  afterCountry_tv.text
+                else
+                    afterTransfer_tv.text = calculateMoneyRate(beforeTransfer_et.text.toString()) + " " + afterCountry_tv.text
             }
         })
     }
@@ -78,8 +79,9 @@ class MainActivity : AppCompatActivity() {
     fun clickOnTransferMoney(view: View) {
         Log.v("메세지 : " , beforeTransfer_Tv.text.toString())
         if(beforeTransfer_et.text.toString().length == 0)
-            return
-        afterTransfer_tv.text = calculateMoneyRate(beforeTransfer_et.text.toString()) + " " +
+            afterTransfer_tv.text = "0 " +  afterCountry_tv.text
+        else
+            afterTransfer_tv.text = calculateMoneyRate(beforeTransfer_et.text.toString()) + " " +
                 afterCountry_tv.text
     }
 }
