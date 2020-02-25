@@ -1,6 +1,8 @@
 package com.example.globalexchangerate
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -20,6 +22,20 @@ class MainActivity : AppCompatActivity() {
 
     private fun init(){
         Server(container,"http://172.30.1.17:8080/getMoneyRate").execute()
+
+        beforeTransfer_et.addTextChangedListener(object : TextWatcher{
+            override fun afterTextChanged(p0: Editable?) {
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+            }
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                if(beforeTransfer_et.text.toString().length == 0)
+                    return
+                afterTransfer_tv.text = calculateMoneyRate(beforeTransfer_et.text.toString()) + " " + afterCountry_tv.text
+            }
+        })
     }
 
 
@@ -61,7 +77,9 @@ class MainActivity : AppCompatActivity() {
 
     fun clickOnTransferMoney(view: View) {
         Log.v("메세지 : " , beforeTransfer_Tv.text.toString())
-        afterTransfer_tv.setText(calculateMoneyRate(beforeTransfer_et.text.toString()) + " " +
-                afterCountry_tv.text)
+        if(beforeTransfer_et.text.toString().length == 0)
+            return
+        afterTransfer_tv.text = calculateMoneyRate(beforeTransfer_et.text.toString()) + " " +
+                afterCountry_tv.text
     }
 }
