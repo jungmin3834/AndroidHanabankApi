@@ -20,30 +20,25 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="300px"
+            android:gravity="center"
             android:orientation="horizontal">
 
-            <TextView
-                android:layout_marginLeft="10dp"
-                android:id="@+id/beforeTransfer_Tv"
-                android:layout_width="69dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="USD" />
+            <Spinner
+                android:id="@+id/beforeTransfer_sp"
+                android:layout_width="129dp"
+                android:layout_height="53dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:entries="@array/rate"
+                android:gravity="bottom|center" />
 
             <EditText
                 android:id="@+id/beforeTransfer_et"
-                android:layout_width="wrap_content"
+                android:layout_width="242dp"
                 android:layout_height="73dp"
                 android:layout_marginTop="16dp"
                 android:ems="10"
                 android:inputType="numberSigned" />
-
-            <Button
-                android:id="@+id/button"
-                android:layout_width="70dp"
-                android:layout_height="88dp"
-                android:layout_weight="1"
-                android:text="Button" />
 
         </LinearLayout>
 
@@ -53,14 +48,15 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <TextView
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="15dp"
-                android:id="@+id/afterCountry_tv"
-                android:layout_width="69dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="KRW" />
+
+            <Spinner
+                android:id="@+id/afterCountry_sp"
+                android:layout_width="166dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:entries="@array/rate"
+                android:gravity="bottom|center" />
 
             <TextView
                 android:id="@+id/afterTransfer_tv"
@@ -74,31 +70,6 @@
 
         </LinearLayout>
 
-        <LinearLayout
-
-            android:layout_width="match_parent"
-            android:layout_height="300px"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_marginBottom="15dp"
-                android:layout_width="69dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="16dp"
-                android:text="KRW" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="0 KRW"
-                android:textSize="18sp"
-                android:textStyle="normal|bold" />
-
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"

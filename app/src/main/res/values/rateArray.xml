@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="rate">
+        <item>호주 달러 AUD</item>
+        <item>알제리 디나르 DZD</item>
+        <item>영국 파운드 GBP</item>
+        <item>바레인 디나르 BHD</item>
+        <item>방글라데시 타카 BDT</item>
+        <item>브라질 레알 BRL</item>
+        <item>브루나이 달러 BND</item>
+        <item>캐나다 달러 CAD</item>
+        <item>중국 위안 CNY</item>
+        <item>칠레 페소 CLP</item>
+        <item>콜롬비아 페소 COP</item>
+        <item>체코 코루나 CZK</item>
+        <item>덴마크 크로네 DKK</item>
+        <item>유로 EUR</item>
+        <item>이집트 파운드 EGP</item>
+        <item>홍콩 달러 HKD</item>
+        <item>헝가리 포린트 HUF</item>
+        <item>인도네시아 루피아 IDR </item>
+        <item>인도 루피 INR</item>
+        <item>이스라엘 셰켈 ILS</item>
+        <item>일본 엔 JPY</item>
+        <item>요르단 디나르 JOD</item>
+        <item>카자흐스탄 텡게 KZT</item>
+        <item>케냐 실링 KES</item>
+        <item>쿠웨이트 디나르 KWD</item>
+        <item>멕시코 페소 MXN</item>
+        <item>몽골 투그릭 MNT</item>
+        <item>뉴질랜드 달러 NZD</item>
+        <item>노르웨이 크로네 NOK</item>
+        <item>오만 리알 OMR</item>
+        <item>파키스탄 루피 PKR</item>
+        <item>필리핀 페소 PHP</item>
+        <item>폴란드 즈워티 PLN</item>
+        <item>카타르 리알 QAR</item>
+        <item>러시아 루블 RUB</item>
+        <item>스위스 프랑 CHF</item>
+        <item>사우디아라비아 리얄 SAR</item>
+        <item>싱가폴 달러 SGD</item>
+        <item>남아프리카 공화국 랜드 ZAR</item>
+        <item>스리랑카 루피 LKR</item>
+        <item>스웨덴 크로나 SEK</item>
+        <item>태국 바트 THB</item>
+        <item>터키어 리라 TRY</item>
+        <item>대만 달러 TWD</item>
+        <item>탄자니아 실링 TZS</item>
+        <item>미국 달러 USD</item>
+        <item>아랍에미리트 디르함 AED</item>
+        <item>베트남 동 VND</item>
+        <item>유로 EUR</item>
+    </string-array>
+
+</resources>
