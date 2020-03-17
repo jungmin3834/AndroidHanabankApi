@@ -5,6 +5,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.view.View
+import android.widget.AdapterView
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import java.lang.StringBuilder
@@ -32,12 +33,30 @@ class MainActivity : AppCompatActivity() {
 
             }
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                if(beforeTransfer_et.text.toString().length == 0)
-                    afterTransfer_tv.text = "0 " +  getRateSplit(beforeTransfer_sp.selectedItem.toString())
-                else
-                    afterTransfer_tv.text =  getCalculateString() + " " + afterCountry_sp.selectedItem.toString()
+                transferMoney()
         }
         })
+
+        beforeTransfer_sp?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                transferMoney()
+            }
+        }
+
+        afterCountry_sp?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                transferMoney()
+            }
+        }
+
         beforeTransfer_sp.setSelection(46)
     }
 
@@ -57,12 +76,14 @@ class MainActivity : AppCompatActivity() {
       var str = StringBuilder(countryRate)
       return "" + str.get(str.length - 3)  + str.get(str.length - 2)  + str.get(str.length - 1)
     }
-
-    fun clickOnTransferMoney(view: View) {
-        Log.v("메세지 : " , beforeTransfer_sp.toString())
+    fun transferMoney(){
         if(beforeTransfer_et.text.toString().length == 0)
             afterTransfer_tv.text = "0 " +" "+    afterCountry_sp.selectedItem.toString()
         else
             afterTransfer_tv.text = getCalculateString() +" "+  afterCountry_sp.selectedItem.toString()
+    }
+
+    fun clickOnTransferMoney(view: View) {
+        transferMoney()
     }
 }
