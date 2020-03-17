@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="rate">
+        <item>대한민국 KRW</item>
         <item>호주 달러 AUD</item>
         <item>알제리 디나르 DZD</item>
         <item>영국 파운드 GBP</item>

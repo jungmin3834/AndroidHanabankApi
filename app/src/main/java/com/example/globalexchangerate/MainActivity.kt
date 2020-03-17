@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
 
 
     val container = Container(HashMap())
-    val calculate = Calculate();
+    val calculate = Calculate()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -38,11 +38,17 @@ class MainActivity : AppCompatActivity() {
                     afterTransfer_tv.text =  getCalculateString() + " " + afterCountry_sp.selectedItem.toString()
         }
         })
+        beforeTransfer_sp.setSelection(46)
     }
 
     fun getCalculateString() : String{
-        var a = container.moneyRateList.get(getRateSplit(beforeTransfer_sp.selectedItem.toString()))?.money ?:1 as Float
-        var b  = container.moneyRateList.get(getRateSplit(afterCountry_sp.selectedItem.toString()))?.money?:1 as Float
+        var a = 1f
+        if(getRateSplit(beforeTransfer_sp.selectedItem.toString()) != "KRW")
+            a =container.moneyRateList.get(getRateSplit(beforeTransfer_sp.selectedItem.toString()))?.money ?:1 as Float
+        var b = 1f
+        if(getRateSplit(afterCountry_sp.selectedItem.toString()) != "KRW")
+            b =container.moneyRateList.get(getRateSplit(afterCountry_sp.selectedItem.toString()))?.money?:1 as Float
+
        return calculate.calculateMoneyRate(beforeTransfer_et.text.toString(),
            (a / b) )
     }
@@ -55,8 +61,8 @@ class MainActivity : AppCompatActivity() {
     fun clickOnTransferMoney(view: View) {
         Log.v("메세지 : " , beforeTransfer_sp.toString())
         if(beforeTransfer_et.text.toString().length == 0)
-            afterTransfer_tv.text = "0 " +  getRateSplit(afterCountry_sp.selectedItem.toString())
+            afterTransfer_tv.text = "0 " +" "+    afterCountry_sp.selectedItem.toString()
         else
-            afterTransfer_tv.text = getCalculateString() + getRateSplit(afterCountry_sp.selectedItem.toString())
+            afterTransfer_tv.text = getCalculateString() +" "+  afterCountry_sp.selectedItem.toString()
     }
 }
